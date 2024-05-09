@@ -5,11 +5,19 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -29,6 +37,26 @@ import com.example.tugasfe.R
 @Composable
 fun screen3(navController: NavHostController) {
     Scaffold (
+        bottomBar = {
+            BottomAppBar {
+                Row(modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceAround) {
+                    IconButton(onClick = { navController.navigate("screen1")}) {
+                        Icon(imageVector = Icons.Default.Home,
+                            contentDescription = "")
+                    }
+                    IconButton(onClick = { navController.navigate("screen2")}) {
+                        Icon(imageVector = Icons.Default.List,
+                            contentDescription = "")
+                    }
+                    IconButton(onClick = { navController.navigate("screen3")}) {
+                        Icon(imageVector = Icons.Default.AccountCircle,
+                            contentDescription = "")
+                    }
+                }
+            }
+        },
         topBar ={
             TopAppBar(title = {
                 Box(modifier = Modifier.fillMaxWidth(),
@@ -36,11 +64,6 @@ fun screen3(navController: NavHostController) {
                     Text(text = "About Me")
                 }
             },
-                navigationIcon = {
-                    TextButton(onClick = { navController.navigate("screen2")}) {
-                        Text(text = "back")
-                    }
-                }
             )
         }
     ){

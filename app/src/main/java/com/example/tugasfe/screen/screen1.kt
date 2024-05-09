@@ -47,30 +47,30 @@ import com.example.tugasfe.component.names
 fun screen1(navController: NavHostController) {
     Scaffold (
         bottomBar = {
-                    BottomAppBar {
-                        Row(modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceAround) {
-                            IconButton(onClick = { navController.navigate("screen1")}) {
-                                Icon(imageVector = Icons.Default.Home,
-                                    contentDescription = "")
-                            }
-                            IconButton(onClick = { navController.navigate("screen2")}) {
-                                Icon(imageVector = Icons.Default.List,
-                                    contentDescription = "")
-                            }
-                            IconButton(onClick = { navController.navigate("screen3")}) {
-                                Icon(imageVector = Icons.Default.AccountCircle,
-                                    contentDescription = "")
-                            }
-                        }
+            BottomAppBar {
+                Row(modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceAround) {
+                    IconButton(onClick = { navController.navigate("screen1")}) {
+                        Icon(imageVector = Icons.Default.Home,
+                            contentDescription = "")
                     }
+                    IconButton(onClick = { navController.navigate("screen2")}) {
+                        Icon(imageVector = Icons.Default.List,
+                            contentDescription = "")
+                    }
+                    IconButton(onClick = { navController.navigate("screen3")}) {
+                        Icon(imageVector = Icons.Default.AccountCircle,
+                            contentDescription = "")
+                    }
+                }
+            }
         },
         topBar ={
             TopAppBar(title = {
-                    Box(modifier = Modifier.fillMaxWidth(),
-                        contentAlignment = Alignment.Center){
-                        Text(text = "screen1")
+                Box(modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.Center){
+                    Text(text = "screen1")
                     }
                 },
             )
@@ -161,9 +161,7 @@ fun ColumnItem(
                 Text(text = tittle[itemIndex],
                     fontSize = 24.sp)
             }
-
         }
-
     }
 }
 
